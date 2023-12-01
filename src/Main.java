@@ -1,4 +1,4 @@
-import question.SavedQuestions;
+import question.QuestionDatabase;
 
 import java.util.Scanner;
 
@@ -7,8 +7,8 @@ public class Main {
     private final static Scanner SCANNER = new Scanner(System.in);
 
     public static void main(String[] args) {
-        SavedQuestions.mathQuestions();
-        SavedQuestions.capitalQuestions();
+        QuestionDatabase.mathQuestions();
+        QuestionDatabase.capitalQuestions();
 
         GameMechanic gameMechanic = new GameMechanic();
         gameMechanic.quizStart();

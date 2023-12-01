@@ -15,7 +15,7 @@ public class Question {
         this.question = question;
     }
 
-    public void addCorrectAnswersToQuestionList() {
+    public void addCorrectAnswerToCorrectAnswerList() {
         for (Answer answer : this.getAnswerList()) {
             if (answer.isCorrect()) {
                 this.correctAnswers.add(answer.getAnswerOrder());

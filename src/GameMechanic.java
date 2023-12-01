@@ -92,6 +92,9 @@ public class GameMechanic {
         }
         scanner.nextLine();
 
+        System.out.println("\n|-----------------------------------------------------------|");
+        System.out.println("\t\tWelcome To quiz! Good luck!");
+        System.out.println("|-----------------------------------------------------------|");
         switch (selectQuiz) {
             case 1 -> {
                 return Quiz.MATH_QUIZ;
