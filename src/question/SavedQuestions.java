@@ -24,7 +24,7 @@ public class SavedQuestions {
         question2.addCorrectAnswersToQuestionList();
         Quiz.MATH_QUIZ.add(question2);
 
-        Question question3 = new Question("What is 5 na 2?");
+        Question question3 = new Question("What is 5^2?");
         question3.addAnswerToAnswerList(new Answer("A", "25", true));
         question3.addAnswerToAnswerList(new Answer("B", "10", false));
         question3.addCorrectAnswersToQuestionList();
