@@ -7,19 +7,23 @@ import java.util.Scanner;
 
 public class GameMechanic {
 
-    private static int totalPoints = 0;
-    private static int correctAnswers = 0;
-    private final static Scanner SCANNER = new Scanner(System.in);
+    private int totalPoints = 0;
+    private int correctAnswers = 0;
+    private int totalQuestionsAnswered = 0;
+    private final Scanner scanner = new Scanner(System.in);
 
     public void quizStart() {
+        String playerAnswer;
+
         for (Question question : quizSelection()) {
-            System.out.println(question.getQuestion());
-            question.printAnswerList();
-//                System.out.println(question.getCorrectAnswers());
+            question.printQuestionWithAnswers();
 
-            String playerAnswer = SCANNER.nextLine().replaceAll("\\s", "").toUpperCase();
+            do {
+                System.out.println("Enter your answer: ");
+                playerAnswer = scanner.nextLine().replaceAll("\\s", "").toUpperCase();
+            } while (!checkTheCorrectnessOfPlayerInput(question, playerAnswer));
+
             int questionPoints = calculateQuestionPoints(question, playerAnswer);
-
             if (questionPoints == question.getCorrectAnswers().size()) {
                 System.out.println("Correct!");
                 correctAnswers++;
@@ -27,13 +31,13 @@ public class GameMechanic {
                 System.out.println("Incorrect! Correct answer(s) is/are " + question.getCorrectAnswers());
             }
 
+            totalQuestionsAnswered++;
             totalPoints += questionPoints;
-            System.out.println();
         }
-        System.out.println("You have " + correctAnswers + " correct answers, with " + totalPoints + " points.\n");
+        printResults();
     }
 
-    private static int calculateQuestionPoints(Question question, String playerAnswer) {
+    private int calculateQuestionPoints(Question question, String playerAnswer) {
         int questionPoints = 0;
 
         for (Answer answer : question.getAnswerList()) {
@@ -49,12 +53,28 @@ public class GameMechanic {
         return questionPoints;
     }
 
-    private static List<Question> quizSelection() {
+    private boolean checkTheCorrectnessOfPlayerInput(Question possibleAnswers, String playerAnswer) {
+        int checkChar = 0;
+        for (Answer possibleAnswer : possibleAnswers.getAnswerList()) {
+            if (playerAnswer.contains(possibleAnswer.getAnswerOrder())) {
+                checkChar++;
+            }
+        }
+
+        if (checkChar == playerAnswer.length()) {
+            return true;
+        } else {
+            System.out.print("Enter valid answer! ");
+            return false;
+        }
+    }
+
+    private List<Question> quizSelection() {
         System.out.println("Select QUIZ: ");
         System.out.println("1 - MATH QUIZ");
         System.out.println("2 - CAPITAL CITIES QUIZ");
-        int selectQuiz = SCANNER.nextInt();
-        SCANNER.nextLine();
+        int selectQuiz = scanner.nextInt();
+        scanner.nextLine();
         switch (selectQuiz) {
             case 1 -> {
                 return Quiz.MATH_QUIZ;
@@ -66,5 +86,14 @@ public class GameMechanic {
                 return null;
             }
         }
+    }
+
+    private void printResults() {
+        System.out.println("\n|-----------------------------------------------------------------------------------------|");
+        System.out.println("\tCongratulations! You answered " + correctAnswers
+                + " out of "
+                + this.totalQuestionsAnswered
+                + " questions correctly. You earned " + totalPoints + " points.");
+        System.out.println("|-----------------------------------------------------------------------------------------|\n");
     }
 }

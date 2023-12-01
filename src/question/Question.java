@@ -7,9 +7,9 @@ import java.util.List;
 
 public class Question {
 
-    String question;
-    List<Answer> answerList = new ArrayList<>();
-    List<String> correctAnswers = new ArrayList<>();
+    private final String question;
+    private final List<Answer> answerList = new ArrayList<>();
+    private final List<String> correctAnswers = new ArrayList<>();
 
     public Question(String question) {
         this.question = question;
@@ -35,18 +35,17 @@ public class Question {
         this.answerList.add(answer);
     }
 
-    public void printAnswerList() {
+    public void printQuestionWithAnswers() {
+        System.out.println("\n|-----------------------------------------------------------|");
+        System.out.println("\t" + this.question);
+        System.out.println("|-----------------------------------------------------------|");
         for (Answer answer : this.answerList) {
-            System.out.println(answer.getAnswerOrder() + ". " + answer.getAnswerText());
+            System.out.println("\t" + answer.getAnswerOrder() + ". " + answer.getAnswerText());
         }
     }
 
     public List<Answer> getAnswerList() {
         return answerList;
-    }
-
-    public String getQuestion() {
-        return question;
     }
 
     public List<String> getCorrectAnswers() {

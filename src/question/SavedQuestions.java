@@ -6,8 +6,11 @@ import quiz.Quiz;
 
 public class SavedQuestions {
 
+    private static final String oneAnswer = "(Question with single answer)";
+    private static final String moreAnswers = "(Question with multiple answers)";
+
     public static void mathQuestions() {
-        Question question1 = new Question("What is 5 + 5?");
+        Question question1 = new Question("What is 5 + 5? " + moreAnswers);
         question1.addAnswerToAnswerList(new Answer("A", "2 * 5", true));
         question1.addAnswerToAnswerList(new Answer("B", "25", false));
         question1.addAnswerToAnswerList(new Answer("C", "13", false));
@@ -16,7 +19,7 @@ public class SavedQuestions {
         question1.addCorrectAnswersToQuestionList();
         Quiz.MATH_QUIZ.add(question1);
 
-        Question question2 = new Question("What is 12 * 12 ?");
+        Question question2 = new Question("What is 12 * 12 ? " + oneAnswer);
         question2.addAnswerToAnswerList(new Answer("A", "45", false));
         question2.addAnswerToAnswerList(new Answer("B", "148", false));
         question2.addAnswerToAnswerList(new Answer("C", "144", true));
@@ -24,7 +27,7 @@ public class SavedQuestions {
         question2.addCorrectAnswersToQuestionList();
         Quiz.MATH_QUIZ.add(question2);
 
-        Question question3 = new Question("What is 5^2?");
+        Question question3 = new Question("What is 5^2? " + oneAnswer);
         question3.addAnswerToAnswerList(new Answer("A", "25", true));
         question3.addAnswerToAnswerList(new Answer("B", "10", false));
         question3.addCorrectAnswersToQuestionList();
@@ -32,7 +35,7 @@ public class SavedQuestions {
     }
 
     public static void capitalQuestions() {
-        Question question1 = new Question("Capital city of Slovakia");
+        Question question1 = new Question("Capital city of Slovakia " + oneAnswer);
         question1.addAnswerToAnswerList(new Answer("A", "Bratislava", true));
         question1.addAnswerToAnswerList(new Answer("B", "Prague", false));
         question1.addAnswerToAnswerList(new Answer("C", "Sofia", false));
@@ -41,7 +44,7 @@ public class SavedQuestions {
         question1.addCorrectAnswersToQuestionList();
         Quiz.CAPITAL_QUIZ.add(question1);
 
-        Question question2 = new Question("Capital city of Norway");
+        Question question2 = new Question("Capital city of Norway " + oneAnswer);
         question2.addAnswerToAnswerList(new Answer("A", "Stockholm", false));
         question2.addAnswerToAnswerList(new Answer("B", "London", false));
         question2.addAnswerToAnswerList(new Answer("C", "Oslo", true));
@@ -49,10 +52,11 @@ public class SavedQuestions {
         question2.addCorrectAnswersToQuestionList();
         Quiz.CAPITAL_QUIZ.add(question2);
 
-        Question question3 = new Question("Capital city of Montenegro");
+        Question question3 = new Question("Capital city of Montenegro " + oneAnswer);
         question3.addAnswerToAnswerList(new Answer("A", "Podgorica", true));
         question3.addAnswerToAnswerList(new Answer("B", "Belgrade", false));
         question3.addCorrectAnswersToQuestionList();
         Quiz.CAPITAL_QUIZ.add(question3);
     }
+
 }
