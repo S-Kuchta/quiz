@@ -1,6 +1,6 @@
 package question;
 
-import question.answer.Answer;
+import answer.Answer;
 
 import java.util.ArrayList;
 import java.util.List;

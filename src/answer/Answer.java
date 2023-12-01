@@ -1,4 +1,4 @@
-package question.answer;
+package answer;
 
 public class Answer {
     private final String answerText;

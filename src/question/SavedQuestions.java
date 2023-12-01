@@ -1,7 +1,7 @@
 package question;
 
 
-import question.answer.Answer;
+import answer.Answer;
 import quiz.Quiz;
 
 public class SavedQuestions {
@@ -32,6 +32,8 @@ public class SavedQuestions {
         question3.addAnswerToAnswerList(new Answer("B", "10", false));
         question3.addCorrectAnswersToQuestionList();
         Quiz.MATH_QUIZ.add(question3);
+
+        Quiz.QUIZ_LIST.add(Quiz.MATH_QUIZ);
     }
 
     public static void capitalQuestions() {
@@ -57,6 +59,8 @@ public class SavedQuestions {
         question3.addAnswerToAnswerList(new Answer("B", "Belgrade", false));
         question3.addCorrectAnswersToQuestionList();
         Quiz.CAPITAL_QUIZ.add(question3);
+
+        Quiz.QUIZ_LIST.add(Quiz.CAPITAL_QUIZ);
     }
 
 }

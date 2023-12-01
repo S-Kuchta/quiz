@@ -1,9 +1,10 @@
+import answer.Answer;
 import question.Question;
-import question.answer.Answer;
 import quiz.Quiz;
 
 import java.util.List;
 import java.util.Scanner;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class GameMechanic {
 
@@ -73,8 +74,24 @@ public class GameMechanic {
         System.out.println("Select QUIZ: ");
         System.out.println("1 - MATH QUIZ");
         System.out.println("2 - CAPITAL CITIES QUIZ");
-        int selectQuiz = scanner.nextInt();
+        System.out.println("3 - RANDOM QUIZ");
+
+        int selectQuiz;
+        while (true) {
+            try {
+                selectQuiz = scanner.nextInt();
+                if (selectQuiz <= Quiz.QUIZ_LIST.size() + 1 && selectQuiz > 0) {
+                    break;
+                } else {
+                    System.out.println("Enter valid number.");
+                }
+            } catch (Exception e) {
+                System.out.println("Enter valid number.");
+            }
+            scanner.nextLine();
+        }
         scanner.nextLine();
+
         switch (selectQuiz) {
             case 1 -> {
                 return Quiz.MATH_QUIZ;
@@ -82,10 +99,15 @@ public class GameMechanic {
             case 2 -> {
                 return Quiz.CAPITAL_QUIZ;
             }
-            default -> {
-                return null;
+            case 3 -> {
+                return Quiz.QUIZ_LIST.get(getRandomNumber(0, Quiz.QUIZ_LIST.size() - 1));
             }
         }
+        return Quiz.QUIZ_LIST.get(getRandomNumber(1, Quiz.QUIZ_LIST.size() - 1));
+    }
+
+    private int getRandomNumber(int Min, int Max) {
+        return ThreadLocalRandom.current().nextInt(Min, Max + 1);
     }
 
     private void printResults() {
