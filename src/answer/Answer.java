@@ -22,5 +22,4 @@ public class Answer {
     public boolean isCorrect() {
         return correct;
     }
-
 }

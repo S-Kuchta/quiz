@@ -6,8 +6,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Quiz {
-    public static final List<Question> MATH_QUIZ = new ArrayList<>();
-    public static final List<Question> CAPITAL_QUIZ = new ArrayList<>();
-    public static final List<List<Question>> QUIZ_LIST = new ArrayList<>();
+    private final String quizName;
+    private final List<Question> questionList = new ArrayList<>();
 
+    public Quiz(String quizName) {
+        this.quizName = quizName;
+    }
+
+    public String getQuizName() {
+        return quizName;
+    }
+
+    public List<Question> getQuestionList() {
+        return questionList;
+    }
 }

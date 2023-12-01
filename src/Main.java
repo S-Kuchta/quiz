@@ -5,10 +5,12 @@ import java.util.Scanner;
 public class Main {
 
     private final static Scanner SCANNER = new Scanner(System.in);
+    private static final QuestionDatabase questionDatabase = new QuestionDatabase();
 
     public static void main(String[] args) {
-        QuestionDatabase.mathQuestions();
-        QuestionDatabase.capitalQuestions();
+        questionDatabase.capitalQuestions();
+        questionDatabase.mathQuestions();
+        questionDatabase.medicalQuestions();
 
         GameMechanic gameMechanic = new GameMechanic();
         gameMechanic.quizStart();

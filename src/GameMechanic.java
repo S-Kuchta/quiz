@@ -1,6 +1,6 @@
 import answer.Answer;
 import question.Question;
-import quiz.Quiz;
+import quiz.QuizList;
 
 import java.util.List;
 import java.util.Scanner;
@@ -72,41 +72,35 @@ public class GameMechanic {
 
     private List<Question> quizSelection() {
         System.out.println("Select QUIZ: ");
-        System.out.println("1 - MATH QUIZ");
-        System.out.println("2 - CAPITAL CITIES QUIZ");
-        System.out.println("3 - RANDOM QUIZ");
+
+        for (int i = 0; i < QuizList.QUIZ_LIST.size(); i++) {
+            System.out.println((i + 1) + ". " + QuizList.QUIZ_LIST.get(i).getQuizName());
+            if (i == QuizList.QUIZ_LIST.size() - 1) {
+                System.out.println(i + 2 + ". Random Quiz");
+            }
+        }
 
         int selectQuiz;
         while (true) {
             try {
                 selectQuiz = scanner.nextInt();
-                if (selectQuiz <= Quiz.QUIZ_LIST.size() + 1 && selectQuiz > 0) {
-                    break;
+                if (selectQuiz == QuizList.QUIZ_LIST.size() + 1) {
+                    selectQuiz = getRandomNumber(1, QuizList.QUIZ_LIST.size());
+                }
+
+                if (selectQuiz <= (QuizList.QUIZ_LIST.size() + 1) && selectQuiz > 0) {
+                    scanner.nextLine();
+                    System.out.println("\n|-----------------------------------------------------------|");
+                    System.out.println("\t\tWelcome To " + QuizList.QUIZ_LIST.get(selectQuiz - 1).getQuizName() + " ! Good luck!");
+                    System.out.println("|-----------------------------------------------------------|");
+                    return QuizList.QUIZ_LIST.get(selectQuiz - 1).getQuestionList();
                 } else {
                     System.out.println("Enter valid number.");
                 }
             } catch (Exception e) {
                 System.out.println("Enter valid number.");
             }
-            scanner.nextLine();
         }
-        scanner.nextLine();
-
-        System.out.println("\n|-----------------------------------------------------------|");
-        System.out.println("\t\tWelcome To quiz! Good luck!");
-        System.out.println("|-----------------------------------------------------------|");
-        switch (selectQuiz) {
-            case 1 -> {
-                return Quiz.MATH_QUIZ;
-            }
-            case 2 -> {
-                return Quiz.CAPITAL_QUIZ;
-            }
-            case 3 -> {
-                return Quiz.QUIZ_LIST.get(getRandomNumber(0, Quiz.QUIZ_LIST.size() - 1));
-            }
-        }
-        return Quiz.QUIZ_LIST.get(getRandomNumber(1, Quiz.QUIZ_LIST.size() - 1));
     }
 
     private int getRandomNumber(int Min, int Max) {

@@ -31,7 +31,6 @@ public class Question {
                 System.exit(0);
             }
         }
-
         this.answerList.add(answer);
     }
 
