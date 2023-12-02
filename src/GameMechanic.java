@@ -74,9 +74,8 @@ public class GameMechanic {
     private void printResults() {
         System.out.println("\n|---------------------------------------" +
                 "--------------------------------------------------|");
-        System.out.println("\tCongratulations! You answered " + this.correctAnswers
-                + " out of "
-                + this.totalQuestionsAnswered
+        System.out.println("\tCongratulations! You answered "
+                + this.correctAnswers + " out of " + this.totalQuestionsAnswered
                 + " questions correctly. You earned " + this.totalPoints + " points.");
         System.out.println("|-----------------------------------------" +
                 "------------------------------------------------|\n");

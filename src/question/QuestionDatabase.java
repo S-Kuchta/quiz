@@ -78,7 +78,7 @@ public class QuestionDatabase {
 
         Question question2 = new Question("Which drug is used primary during CPR? " + oneAnswer);
         question2.addAnswerToAnswerList(new Answer("A", "Apaurin", false));
-        question2.addAnswerToAnswerList(new Answer("B", "Degan", false));
+        question2.addAnswerToAnswerList(new Answer("B", "Tensamin", false));
         question2.addAnswerToAnswerList(new Answer("C", "Cordarone", false));
         question2.addAnswerToAnswerList(new Answer("D", "Adrenaline", true));
         question2.addCorrectAnswerToCorrectAnswerList();
@@ -89,7 +89,7 @@ public class QuestionDatabase {
         question3.addAnswerToAnswerList(new Answer("B", "Pulse Rate", true));
         question3.addAnswerToAnswerList(new Answer("C", "Respiration Rate", true));
         question3.addAnswerToAnswerList(new Answer("D", "Blood Pressure", true));
-        question3.addAnswerToAnswerList(new Answer("E", "Patient mood", false));
+        question3.addAnswerToAnswerList(new Answer("E", "The patient's mood", false));
         question3.addCorrectAnswerToCorrectAnswerList();
         this.medicalQuestionsQuiz.getQuestionList().add(question3);
 
