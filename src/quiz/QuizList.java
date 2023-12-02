@@ -35,7 +35,7 @@ public class QuizList {
                 if (selectQuiz <= (QUIZ_LIST.size() + 1) && selectQuiz > 0) {
                     scanner.nextLine();
                     System.out.println("\n\t|-----------------------------------------------------------|");
-                    System.out.println("\t\t\t\tWelcome To " + QUIZ_LIST.get(selectQuiz - 1).getQuizName() + " ! Good luck!");
+                    System.out.println("\t\t\tWelcome To " + QUIZ_LIST.get(selectQuiz - 1).getQuizName() + " ! Good luck!");
                     System.out.println("\t|-----------------------------------------------------------|");
                     return QUIZ_LIST.get(selectQuiz - 1).getQuestionList();
                 } else {
