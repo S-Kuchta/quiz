@@ -55,14 +55,14 @@ public class GameMechanic {
     }
 
     private boolean checkTheCorrectnessOfPlayerInput(Question possibleAnswers, String playerAnswer) {
-        int checkChar = 0;
+        int checkLetters = 0;
         for (Answer possibleAnswer : possibleAnswers.getAnswerList()) {
             if (playerAnswer.contains(possibleAnswer.getAnswerOrder())) {
-                checkChar++;
+                checkLetters++;
             }
         }
 
-        if (checkChar == playerAnswer.length()) {
+        if (checkLetters == playerAnswer.length()) {
             return true;
         } else {
             System.out.print("Enter valid answer! ");
@@ -70,15 +70,18 @@ public class GameMechanic {
         }
     }
 
-    private List<Question> quizSelection() {
+    private void printQuizSelectionList() {
         System.out.println("Select QUIZ: ");
-
         for (int i = 0; i < QuizList.QUIZ_LIST.size(); i++) {
             System.out.println((i + 1) + ". " + QuizList.QUIZ_LIST.get(i).getQuizName());
             if (i == QuizList.QUIZ_LIST.size() - 1) {
                 System.out.println(i + 2 + ". Random Quiz");
             }
         }
+    }
+
+    private List<Question> quizSelection() {
+        printQuizSelectionList();
 
         int selectQuiz;
         while (true) {
@@ -91,7 +94,7 @@ public class GameMechanic {
                 if (selectQuiz <= (QuizList.QUIZ_LIST.size() + 1) && selectQuiz > 0) {
                     scanner.nextLine();
                     System.out.println("\n|-----------------------------------------------------------|");
-                    System.out.println("\t\tWelcome To " + QuizList.QUIZ_LIST.get(selectQuiz - 1).getQuizName() + " ! Good luck!");
+                    System.out.println("\t\t\tWelcome To " + QuizList.QUIZ_LIST.get(selectQuiz - 1).getQuizName() + " ! Good luck!");
                     System.out.println("|-----------------------------------------------------------|");
                     return QuizList.QUIZ_LIST.get(selectQuiz - 1).getQuestionList();
                 } else {
@@ -100,6 +103,7 @@ public class GameMechanic {
             } catch (Exception e) {
                 System.out.println("Enter valid number.");
             }
+            scanner.nextLine();
         }
     }
 
@@ -108,11 +112,13 @@ public class GameMechanic {
     }
 
     private void printResults() {
-        System.out.println("\n|-----------------------------------------------------------------------------------------|");
+        System.out.println("\n|---------------------------------------" +
+                "--------------------------------------------------|");
         System.out.println("\tCongratulations! You answered " + correctAnswers
                 + " out of "
                 + this.totalQuestionsAnswered
                 + " questions correctly. You earned " + totalPoints + " points.");
-        System.out.println("|-----------------------------------------------------------------------------------------|\n");
+        System.out.println("|-----------------------------------------" +
+                "------------------------------------------------|\n");
     }
 }

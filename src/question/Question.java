@@ -35,9 +35,9 @@ public class Question {
     }
 
     public void printQuestionWithAnswers() {
-        System.out.println("\n|-----------------------------------------------------------|");
+        System.out.println("\n|------------------------------------------------------------------------|");
         System.out.println("\t" + this.question);
-        System.out.println("|-----------------------------------------------------------|");
+        System.out.println("|------------------------------------------------------------------------|");
         for (Answer answer : this.answerList) {
             System.out.println("\t" + answer.getAnswerOrder() + ". " + answer.getAnswerText());
         }
