@@ -34,9 +34,9 @@ public class Question {
         this.answerList.add(answer);
     }
 
-    public void printQuestionWithAnswers() {
+    public void printQuestionWithAnswers(int index) {
         System.out.println("\n|------------------------------------------------------------------------|");
-        System.out.println("\t" + this.question);
+        System.out.println("\t" + index + ". " + this.question);
         System.out.println("|------------------------------------------------------------------------|");
         for (Answer answer : this.answerList) {
             System.out.println("\t" + answer.getAnswerOrder() + ". " + answer.getAnswerText());
@@ -44,10 +44,10 @@ public class Question {
     }
 
     public List<Answer> getAnswerList() {
-        return answerList;
+        return this.answerList;
     }
 
     public List<String> getCorrectAnswers() {
-        return correctAnswers;
+        return this.correctAnswers;
     }
 }

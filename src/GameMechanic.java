@@ -2,9 +2,7 @@ import answer.Answer;
 import question.Question;
 import quiz.QuizList;
 
-import java.util.List;
 import java.util.Scanner;
-import java.util.concurrent.ThreadLocalRandom;
 
 public class GameMechanic {
 
@@ -15,9 +13,11 @@ public class GameMechanic {
 
     public void quizStart() {
         String playerAnswer;
+        int index = 1;
+        QuizList quizList = new QuizList();
 
-        for (Question question : quizSelection()) {
-            question.printQuestionWithAnswers();
+        for (Question question : quizList.quizSelection()) {
+            question.printQuestionWithAnswers(index);
 
             do {
                 System.out.println("Enter your answer: ");
@@ -27,13 +27,14 @@ public class GameMechanic {
             int questionPoints = calculateQuestionPoints(question, playerAnswer);
             if (questionPoints == question.getCorrectAnswers().size()) {
                 System.out.println("Correct!");
-                correctAnswers++;
+                this.correctAnswers++;
             } else {
                 System.out.println("Incorrect! Correct answer(s) is/are " + question.getCorrectAnswers());
             }
 
-            totalQuestionsAnswered++;
-            totalPoints += questionPoints;
+            this.totalQuestionsAnswered++;
+            this.totalPoints += questionPoints;
+            index++;
         }
         printResults();
     }
@@ -42,11 +43,7 @@ public class GameMechanic {
         int questionPoints = 0;
 
         for (Answer answer : question.getAnswerList()) {
-            if (question.getCorrectAnswers().size() < playerAnswer.length()) {
-                break;
-            }
-
-            if(question.getCorrectAnswers().size() > playerAnswer.length()) {
+            if (question.getCorrectAnswers().size() != playerAnswer.length()) {
                 break;
             }
 
@@ -74,54 +71,13 @@ public class GameMechanic {
         }
     }
 
-    private void printQuizSelectionList() {
-        System.out.println("Select QUIZ: ");
-        for (int i = 0; i < QuizList.QUIZ_LIST.size(); i++) {
-            System.out.println((i + 1) + ". " + QuizList.QUIZ_LIST.get(i).getQuizName());
-            if (i == QuizList.QUIZ_LIST.size() - 1) {
-                System.out.println(i + 2 + ". Random Quiz");
-            }
-        }
-    }
-
-    private List<Question> quizSelection() {
-        printQuizSelectionList();
-
-        int selectQuiz;
-        while (true) {
-            try {
-                selectQuiz = scanner.nextInt();
-                if (selectQuiz == QuizList.QUIZ_LIST.size() + 1) {
-                    selectQuiz = getRandomNumber(1, QuizList.QUIZ_LIST.size());
-                }
-
-                if (selectQuiz <= (QuizList.QUIZ_LIST.size() + 1) && selectQuiz > 0) {
-                    scanner.nextLine();
-                    System.out.println("\n|-----------------------------------------------------------|");
-                    System.out.println("\t\t\tWelcome To " + QuizList.QUIZ_LIST.get(selectQuiz - 1).getQuizName() + " ! Good luck!");
-                    System.out.println("|-----------------------------------------------------------|");
-                    return QuizList.QUIZ_LIST.get(selectQuiz - 1).getQuestionList();
-                } else {
-                    System.out.println("Enter valid number.");
-                }
-            } catch (Exception e) {
-                System.out.println("Enter valid number.");
-            }
-            scanner.nextLine();
-        }
-    }
-
-    private int getRandomNumber(int Min, int Max) {
-        return ThreadLocalRandom.current().nextInt(Min, Max + 1);
-    }
-
     private void printResults() {
         System.out.println("\n|---------------------------------------" +
                 "--------------------------------------------------|");
-        System.out.println("\tCongratulations! You answered " + correctAnswers
+        System.out.println("\tCongratulations! You answered " + this.correctAnswers
                 + " out of "
                 + this.totalQuestionsAnswered
-                + " questions correctly. You earned " + totalPoints + " points.");
+                + " questions correctly. You earned " + this.totalPoints + " points.");
         System.out.println("|-----------------------------------------" +
                 "------------------------------------------------|\n");
     }
