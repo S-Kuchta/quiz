@@ -46,6 +46,10 @@ public class GameMechanic {
                 break;
             }
 
+            if(question.getCorrectAnswers().size() > playerAnswer.length()) {
+                break;
+            }
+
             if (answer.isCorrect() && playerAnswer.contains(answer.getAnswerOrder())) {
                 questionPoints++;
             }
