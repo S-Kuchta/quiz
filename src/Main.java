@@ -9,7 +9,7 @@ public class Main {
     private static final QuestionDatabase questionDatabase = new QuestionDatabase();
 
     public static void main(String[] args) {
-        questionDatabase.mathQuestions();
+        questionDatabase.questionsAndAnswersInitialize();
 
         System.out.println("\n-> Welcome to my Quiz challenge. You can choose between " + QuizList.QUIZ_LIST.size() + " quizzes or leave it to chance and get random one.");
         System.out.println("""

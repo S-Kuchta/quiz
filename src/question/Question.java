@@ -9,7 +9,7 @@ import java.util.List;
 public class Question {
 
     private final String question;
-    private List<Answer> answerList = new ArrayList<>();
+    private final List<Answer> answerList = new ArrayList<>();
     private final List<String> correctAnswers = new ArrayList<>();
 
     public Question(String question) {
@@ -34,18 +34,8 @@ public class Question {
     }
 
     public void addAnswerToAnswerList(Answer answer) {
-//        answer.setAnswerOrder(this.answerList.size() + 1);
-//        for (Answer order : this.answerList) {
-//            if (order.getAnswerOrder().contains(answer.getAnswerOrder())) {
-//                System.out.println("Check answers order in questions and fix it!");
-//                System.out.println(this.question + ", answer order problem: " + order.getAnswerOrder());
-//                System.exit(0);
-//            }
-//        }
-
         this.answerList.add(answer);
     }
-
 
     public void printQuestionWithAnswers(int index) {
 
