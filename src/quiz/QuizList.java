@@ -1,11 +1,11 @@
 package quiz;
 
+import helpMethod.RandomNumberGenerator;
 import question.Question;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import java.util.concurrent.ThreadLocalRandom;
 
 public class QuizList {
     public static final List<Quiz> QUIZ_LIST = new ArrayList<>();
@@ -29,7 +29,7 @@ public class QuizList {
             try {
                 selectQuiz = scanner.nextInt();
                 if (selectQuiz == QUIZ_LIST.size() + 1) {
-                    selectQuiz = getRandomNumber(1, QUIZ_LIST.size());
+                    selectQuiz = RandomNumberGenerator.getRandomNumber(1, QUIZ_LIST.size());
                 }
 
                 if (selectQuiz <= (QUIZ_LIST.size() + 1) && selectQuiz > 0) {
@@ -48,7 +48,4 @@ public class QuizList {
         }
     }
 
-    private int getRandomNumber(int Min, int Max) {
-        return ThreadLocalRandom.current().nextInt(Min, Max + 1);
-    }
 }

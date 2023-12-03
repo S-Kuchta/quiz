@@ -4,7 +4,7 @@ import quiz.QuizList;
 
 import java.util.Scanner;
 
-public class GameMechanic {
+public class GameLogic {
 
     private int totalPoints = 0;
     private int correctAnswers = 0;
@@ -15,6 +15,7 @@ public class GameMechanic {
         String playerAnswer;
         int index = 1;
         QuizList quizList = new QuizList();
+
 
         for (Question question : quizList.quizSelection()) {
             question.printQuestionWithAnswers(index);
@@ -33,7 +34,7 @@ public class GameMechanic {
             }
 
             this.totalQuestionsAnswered++;
-            this.totalPoints += questionPoints;
+//            this.totalPoints += questionPoints;
             index++;
         }
         printResults();
@@ -44,7 +45,7 @@ public class GameMechanic {
 
         for (Answer answer : question.getAnswerList()) {
             if (question.getCorrectAnswers().size() != playerAnswer.length()) {
-                break;
+                return 0;
             }
 
             if (answer.isCorrect() && playerAnswer.contains(answer.getAnswerOrder())) {
@@ -73,11 +74,11 @@ public class GameMechanic {
 
     private void printResults() {
         System.out.println("\n|---------------------------------------" +
-                "--------------------------------------------------|");
-        System.out.println("\tCongratulations! You answered "
+                "------------------------------------------|");
+        System.out.println("\t\tCongratulations! You answered "
                 + this.correctAnswers + " out of " + this.totalQuestionsAnswered
-                + " questions correctly. You earned " + this.totalPoints + " points.");
+                + " questions correctly." /*+ "You earned " + this.totalPoints + " points."*/);
         System.out.println("|-----------------------------------------" +
-                "------------------------------------------------|\n");
+                "----------------------------------------|\n");
     }
 }

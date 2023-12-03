@@ -20,8 +20,8 @@ public class Main {
                 -> You must enter the exact number of answers (for questions with multiple correct answers), otherwise your answer will be incorrect
                 -> You get 1 point for each correct answer. For questions with multiple correct answers, you get a point for each answer (max 5)""");
         System.out.println("-> Now lets play! Have fun and good luck!\n");
-        GameMechanic gameMechanic = new GameMechanic();
-        gameMechanic.quizStart();
+        GameLogic gameLogic = new GameLogic();
+        gameLogic.quizStart();
 
         while (true) {
             System.out.println("Do you want to play another QUIZ? enter -> YES or NO");
@@ -29,7 +29,7 @@ public class Main {
             if (continuePlaying.equals("NO")) {
                 System.exit(0);
             } else if (continuePlaying.equals("YES")) {
-                gameMechanic.quizStart();
+                gameLogic.quizStart();
             } else {
                 System.out.println("Enter valid answer.");
             }
