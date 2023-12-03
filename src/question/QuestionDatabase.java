@@ -5,10 +5,6 @@ import answer.Answer;
 import quiz.Quiz;
 import quiz.QuizList;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
 public class QuestionDatabase {
 
     private static final String oneAnswer = "(Question with single answer)";
@@ -17,113 +13,85 @@ public class QuestionDatabase {
     private final Quiz capitalCitiesQuiz = new Quiz("Capital Cities Quiz");
     private final Quiz medicalQuestionsQuiz = new Quiz("Medical Quiz");
 
+    private void addAnswersToQuestion(Question question, String text, boolean isAnswerCorrect) {
+        question.addAnswerToAnswerList(new Answer(text, isAnswerCorrect));
+    }
+
+    private void addOrderToAnswerList(Question question, Quiz quiz) {
+//        question.addOrderToAnswerList();
+//        question.addCorrectAnswerToCorrectAnswerList();
+        quiz.getQuestionList().add(question);
+    }
+
     public void mathQuestions() {
+        Question mathQuestion1 = new Question("What is 5 + 5? " + moreAnswers);
+        addAnswersToQuestion(mathQuestion1, "2 * 5", true);
+        addAnswersToQuestion(mathQuestion1,  "25", false);
+        addAnswersToQuestion(mathQuestion1, "13", false);
+        addAnswersToQuestion(mathQuestion1, "10", true);
+        addAnswersToQuestion(mathQuestion1, "18", false);
+        addOrderToAnswerList(mathQuestion1, this.mathQuiz);
 
-//        List<Answer> answerList = new ArrayList<>();
-//        Question question1 = new Question("What is 5 + 5? " + moreAnswers);
-//        answerList.add(new Answer("2 * 5", true));
-//        answerList.add(new Answer("25", false));
-//        answerList.add(new Answer("13", false));
-//        answerList.add(new Answer("10", true));
-//        answerList.add(new Answer("18", false));
-//        Collections.shuffle(answerList);
-//        question1.addAnswerToAnswerList(answerList);
-//        question1.addCorrectAnswerToCorrectAnswerList();
-//        this.mathQuiz.getQuestionList().add(question1);
+        Question mathQuestion2 = new Question("What is 12 * 12 ? " + oneAnswer);
+        addAnswersToQuestion(mathQuestion2,"45", false);
+        addAnswersToQuestion(mathQuestion2,"148", false);
+        addAnswersToQuestion(mathQuestion2,"144", true);
+        addAnswersToQuestion(mathQuestion2,"124", false);
+        addOrderToAnswerList(mathQuestion2, this.mathQuiz);
+
+        Question mathQuestion3 = new Question("What is 5^2? " + oneAnswer);
+        addAnswersToQuestion(mathQuestion3,"25", true);
+        addAnswersToQuestion(mathQuestion3,"10", false);
+        addOrderToAnswerList(mathQuestion3, this.mathQuiz);
 
 
-        Question question1 = new Question("What is 5 + 5? " + moreAnswers);
-        question1.addAnswerToAnswerList(new Answer("2 * 5", true));
-        question1.addAnswerToAnswerList(new Answer( "25", false));
-        question1.addAnswerToAnswerList(new Answer("13", false));
-        question1.addAnswerToAnswerList(new Answer("10", true));
-        question1.addAnswerToAnswerList(new Answer("18", false));
-        question1.addOrderToAnswerList();
-        question1.addCorrectAnswerToCorrectAnswerList();
-        this.mathQuiz.getQuestionList().add(question1);
+        Question capitalQuestion1 = new Question("Capital city of Slovakia " + oneAnswer);
+        addAnswersToQuestion(capitalQuestion1,"Bratislava", true);
+        addAnswersToQuestion(capitalQuestion1,"Prague", false);
+        addAnswersToQuestion(capitalQuestion1,"Sofia", false);
+        addAnswersToQuestion(capitalQuestion1,"Košice", false);
+        addAnswersToQuestion(capitalQuestion1,"Snina", false);
+        addOrderToAnswerList(capitalQuestion1, this.capitalCitiesQuiz);
 
-        Question question2 = new Question("What is 12 * 12 ? " + oneAnswer);
-        question2.addAnswerToAnswerList(new Answer("45", false));
-        question2.addAnswerToAnswerList(new Answer("148", false));
-        question2.addAnswerToAnswerList(new Answer("144", true));
-        question2.addAnswerToAnswerList(new Answer("124", false));
-        question2.addOrderToAnswerList();
-        question2.addCorrectAnswerToCorrectAnswerList();
-        this.mathQuiz.getQuestionList().add(question2);
+        Question capitalQuestion2 = new Question("Capital city of Norway " + oneAnswer);
+        addAnswersToQuestion(capitalQuestion2, "Stockholm", false);
+        addAnswersToQuestion(capitalQuestion2,"London", false);
+        addAnswersToQuestion(capitalQuestion2,"Oslo", true);
+        addAnswersToQuestion(capitalQuestion2,"Helsinki", false);
+        addOrderToAnswerList(capitalQuestion2, this.capitalCitiesQuiz);
 
-        Question question3 = new Question("What is 5^2? " + oneAnswer);
-        question3.addAnswerToAnswerList(new Answer("25", true));
-        question3.addAnswerToAnswerList(new Answer("10", false));
-        question3.addOrderToAnswerList();
-        question3.addCorrectAnswerToCorrectAnswerList();
-        this.mathQuiz.getQuestionList().add(question3);
+        Question capitalQuestion3 = new Question("Capital city of Montenegro " + oneAnswer);
+        addAnswersToQuestion(capitalQuestion3,"Podgorica", true);
+        addAnswersToQuestion(capitalQuestion3,"Belgrade", false);
+        addOrderToAnswerList(capitalQuestion3, this.capitalCitiesQuiz);
 
-        QuizList.QUIZ_LIST.add(mathQuiz);
-    }
 
-    public void capitalQuestions() {
-        Question question1 = new Question("Capital city of Slovakia " + oneAnswer);
-        question1.addAnswerToAnswerList(new Answer("Bratislava", true));
-        question1.addAnswerToAnswerList(new Answer("Prague", false));
-        question1.addAnswerToAnswerList(new Answer("Sofia", false));
-        question1.addAnswerToAnswerList(new Answer("Košice", false));
-        question1.addAnswerToAnswerList(new Answer("Snina", false));
-        question1.addOrderToAnswerList();
-        question1.addCorrectAnswerToCorrectAnswerList();
-        this.capitalCitiesQuiz.getQuestionList().add(question1);
+        Question medicalQuestion1 = new Question("What is biggest bone in human body? " + oneAnswer);
+        addAnswersToQuestion(medicalQuestion1,"Scapula", false);
+        addAnswersToQuestion(medicalQuestion1,"Femur", true);
+        addAnswersToQuestion(medicalQuestion1,"Tibia", false);
+        addAnswersToQuestion(medicalQuestion1,"Fibula", false);
+        addOrderToAnswerList(medicalQuestion1, this.medicalQuestionsQuiz);
 
-        Question question2 = new Question("Capital city of Norway " + oneAnswer);
-        question2.addAnswerToAnswerList(new Answer("Stockholm", false));
-        question2.addAnswerToAnswerList(new Answer("London", false));
-        question2.addAnswerToAnswerList(new Answer("Oslo", true));
-        question2.addAnswerToAnswerList(new Answer("Helsinki", false));
-        question2.addOrderToAnswerList();
-        question2.addCorrectAnswerToCorrectAnswerList();
-        this.capitalCitiesQuiz.getQuestionList().add(question2);
+        Question medicalQuestion2 = new Question("Which drug is used primary during CPR? " + oneAnswer);
+        addAnswersToQuestion(medicalQuestion2,"Apaurin", false);
+        addAnswersToQuestion(medicalQuestion2,"Tensamin", false);
+        addAnswersToQuestion(medicalQuestion2,"Cordarone", false);
+        addAnswersToQuestion(medicalQuestion2,"Adrenaline", true);
+        addOrderToAnswerList(medicalQuestion2, this.medicalQuestionsQuiz);
 
-        Question question3 = new Question("Capital city of Montenegro " + oneAnswer);
-        question3.addAnswerToAnswerList(new Answer("Podgorica", true));
-        question3.addAnswerToAnswerList(new Answer("Belgrade", false));
-        question3.addOrderToAnswerList();
-        question3.addCorrectAnswerToCorrectAnswerList();
-        this.capitalCitiesQuiz.getQuestionList().add(question3);
+        Question medicalQuestion3 = new Question("What are basic vital signs? " + moreAnswers);
+        addAnswersToQuestion(medicalQuestion3,"Body Temperature", true);
+        addAnswersToQuestion(medicalQuestion3,"Pulse Rate", true);
+        addAnswersToQuestion(medicalQuestion3,"Respiration Rate", true);
+        addAnswersToQuestion(medicalQuestion3,"Blood Pressure", true);
+        addAnswersToQuestion(medicalQuestion3,"The patient's mood", false);
+        addOrderToAnswerList(medicalQuestion3, this.medicalQuestionsQuiz);
 
+        QuizList.QUIZ_LIST.add(this.mathQuiz);
         QuizList.QUIZ_LIST.add(this.capitalCitiesQuiz);
-    }
-
-    public void medicalQuestions() {
-        Question question1 = new Question("What is biggest bone in human body? " + oneAnswer);
-        question1.addAnswerToAnswerList(new Answer("Scapula", false));
-        question1.addAnswerToAnswerList(new Answer("Femur", true));
-        question1.addAnswerToAnswerList(new Answer("Tibia", false));
-        question1.addAnswerToAnswerList(new Answer("Fibula", false));
-        question1.addOrderToAnswerList();
-        question1.addCorrectAnswerToCorrectAnswerList();
-        this.medicalQuestionsQuiz.getQuestionList().add(question1);
-
-        Question question2 = new Question("Which drug is used primary during CPR? " + oneAnswer);
-        question2.addAnswerToAnswerList(new Answer("Apaurin", false));
-        question2.addAnswerToAnswerList(new Answer("Tensamin", false));
-        question2.addAnswerToAnswerList(new Answer("Cordarone", false));
-        question2.addAnswerToAnswerList(new Answer("Adrenaline", true));
-        question2.addOrderToAnswerList();
-        question2.addCorrectAnswerToCorrectAnswerList();
-        this.medicalQuestionsQuiz.getQuestionList().add(question2);
-
-        Question question3 = new Question("What are basic vital signs? " + moreAnswers);
-        question3.addAnswerToAnswerList(new Answer("Body Temperature", true));
-        question3.addAnswerToAnswerList(new Answer("Pulse Rate", true));
-        question3.addAnswerToAnswerList(new Answer("Respiration Rate", true));
-        question3.addAnswerToAnswerList(new Answer("Blood Pressure", true));
-        question3.addAnswerToAnswerList(new Answer("The patient's mood", false));
-        question3.addOrderToAnswerList();
-        question3.addCorrectAnswerToCorrectAnswerList();
-        this.medicalQuestionsQuiz.getQuestionList().add(question3);
-
         QuizList.QUIZ_LIST.add(this.medicalQuestionsQuiz);
 
 
     }
-
-
 }

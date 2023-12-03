@@ -48,6 +48,11 @@ public class Question {
 
 
     public void printQuestionWithAnswers(int index) {
+
+        this.correctAnswers.clear();
+        addOrderToAnswerList();
+        addCorrectAnswerToCorrectAnswerList();
+
         System.out.println("\n|------------------------------------------------------------------------|");
         System.out.println("\t" + index + ". " + this.question);
         System.out.println("|------------------------------------------------------------------------|");

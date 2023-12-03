@@ -1,12 +1,13 @@
 import answer.Answer;
 import question.Question;
+import quiz.Quiz;
 import quiz.QuizList;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class GameLogic {
 
-    private int totalPoints = 0;
     private int correctAnswers = 0;
     private int totalQuestionsAnswered = 0;
     private final Scanner scanner = new Scanner(System.in);
@@ -15,7 +16,6 @@ public class GameLogic {
         String playerAnswer;
         int index = 1;
         QuizList quizList = new QuizList();
-
 
         for (Question question : quizList.quizSelection()) {
             question.printQuestionWithAnswers(index);
@@ -34,7 +34,6 @@ public class GameLogic {
             }
 
             this.totalQuestionsAnswered++;
-//            this.totalPoints += questionPoints;
             index++;
         }
         printResults();
@@ -77,7 +76,7 @@ public class GameLogic {
                 "------------------------------------------|");
         System.out.println("\t\tCongratulations! You answered "
                 + this.correctAnswers + " out of " + this.totalQuestionsAnswered
-                + " questions correctly." /*+ "You earned " + this.totalPoints + " points."*/);
+                + " questions correctly.");
         System.out.println("|-----------------------------------------" +
                 "----------------------------------------|\n");
     }

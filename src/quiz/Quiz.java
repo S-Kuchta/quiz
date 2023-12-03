@@ -3,6 +3,7 @@ package quiz;
 import question.Question;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Quiz {
@@ -18,6 +19,7 @@ public class Quiz {
     }
 
     public List<Question> getQuestionList() {
-        return questionList;
+        Collections.shuffle(this.questionList);
+        return this.questionList;
     }
 }
