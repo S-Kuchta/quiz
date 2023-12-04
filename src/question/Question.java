@@ -17,6 +17,7 @@ public class Question {
     }
 
     public void addCorrectAnswerToCorrectAnswerList() {
+        this.correctAnswers.clear();
         for (Answer answer : this.getAnswerList()) {
             if (answer.isCorrect()) {
                 this.correctAnswers.add(answer.getAnswerOrder());
@@ -27,7 +28,7 @@ public class Question {
     public void addOrderToAnswerList() {
         Collections.shuffle(this.answerList);
         int index = 1;
-        for(Answer answer : answerList) {
+        for (Answer answer : answerList) {
             answer.setAnswerOrder(index);
             index++;
         }
@@ -38,11 +39,6 @@ public class Question {
     }
 
     public void printQuestionWithAnswers(int index) {
-
-        this.correctAnswers.clear();
-        addOrderToAnswerList();
-        addCorrectAnswerToCorrectAnswerList();
-
         System.out.println("\n|------------------------------------------------------------------------|");
         System.out.println("\t" + index + ". " + this.question);
         System.out.println("|------------------------------------------------------------------------|");

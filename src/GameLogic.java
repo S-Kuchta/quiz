@@ -18,11 +18,13 @@ public class GameLogic {
         QuizList quizList = new QuizList();
 
         for (Question question : quizList.quizSelection()) {
+            question.addOrderToAnswerList();
+            question.addCorrectAnswerToCorrectAnswerList();
             question.printQuestionWithAnswers(index);
 
             do {
                 System.out.println("Enter your answer: ");
-                playerAnswer = scanner.nextLine().replaceAll("\\s", "").toUpperCase();
+                playerAnswer = scanner.nextLine().replaceAll("\\s+", "").toUpperCase();
             } while (!checkTheCorrectnessOfPlayerInput(question, playerAnswer));
 
             int questionPoints = calculateQuestionPoints(question, playerAnswer);

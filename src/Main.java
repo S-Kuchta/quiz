@@ -11,13 +11,13 @@ public class Main {
     public static void main(String[] args) {
         questionDatabase.questionsAndAnswersInitialize();
 
-        System.out.println("\n-> Welcome to my Quiz challenge. You can choose between " + QuizList.QUIZ_LIST.size() + " quizzes or leave it to chance and get random one.");
+        System.out.println("\n-> Welcome to my Quiz challenge! You have the option to choose from " + QuizList.QUIZ_LIST.size() + " quizzes or leave it to chance and get random one");
         System.out.println("""
-                -> To select a quiz, enter the number before the name of the quiz.
-                -> Enter the answer into console as a letter.(e.g.: 'a', 'A', 'b', ...)
-                -> If there are more correct answers(you will be announced after each question), enter them in one line(e.g.: 'abc', 'aCb','a b d', ...)
-                -> You must enter the exact number of answers (for questions with multiple correct answers), otherwise your answer will be incorrect""");
-        System.out.println("-> Now lets play! Have fun and good luck!\n");
+                -> To select a quiz, simply input the number preceding the quiz's name
+                -> Enter your answers into the console using a single letter(e.g., 'a', 'A', 'b', etc.) - without using quotation marks
+                -> In cases where there are multiple correct answers(which will be announced after each question), input them all in one line(e.g., 'abc', 'aCb','a b d', etc.) - without using quotation marks
+                -> It's important to enter the exact number of answers for questions with multiple correct responses; otherwise, your answer will be considered incorrect""");
+        System.out.println("-> Now, let's begin! Enjoy the quiz and good luck!\n");
         GameLogic gameLogic = new GameLogic();
         gameLogic.quizStart();
 
