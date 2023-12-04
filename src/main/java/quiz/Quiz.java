@@ -2,16 +2,16 @@ package quiz;
 
 import question.Question;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 public class Quiz {
     private final String quizName;
-    private final List<Question> questionList = new ArrayList<>();
+    private final List<Question> questionList;
 
-    public Quiz(String quizName) {
+    public Quiz(String quizName, List<Question> questionList) {
         this.quizName = quizName;
+        this.questionList = questionList;
     }
 
     public String getQuizName() {

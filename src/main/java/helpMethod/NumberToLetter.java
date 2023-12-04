@@ -14,16 +14,12 @@ public enum NumberToLetter {
         this.value = value;
     }
 
-    public int getValue() {
-        return value;
-    }
-
     public static String getStringFromValue(int value) {
         for (NumberToLetter enumValue : NumberToLetter.values()) {
             if (enumValue.value == value) {
-                return enumValue.name(); // Alebo tu vráťte reťazec, ktorý chcete mať priradený k hodnote
+                return enumValue.name();
             }
         }
-        return null; // Alebo nejaký defaultný reťazec, ak sa hodnota nenájde
+        return null;
     }
 }

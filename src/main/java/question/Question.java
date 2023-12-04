@@ -34,10 +34,6 @@ public class Question {
         }
     }
 
-    public void addAnswerToAnswerList(Answer answer) {
-        this.answerList.add(answer);
-    }
-
     public void printQuestionWithAnswers(int index) {
         System.out.println("\n|------------------------------------------------------------------------|");
         System.out.println("\t" + index + ". " + this.question);

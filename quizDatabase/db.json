@@ -1,0 +1,210 @@
+[
+  {
+    "quizName": "Medical Quiz",
+    "questionList": [
+      {
+        "question": "What is biggest bone in human body?",
+        "answerList": [
+          {
+            "answerText": "Scapula",
+            "correct": false
+          },
+          {
+            "answerText": "Femur",
+            "correct": true
+          },
+          {
+            "answerText": "Tibia",
+            "correct": false
+          },
+          {
+            "answerText": "Fibula",
+            "correct": false
+          }
+        ],
+        "correctAnswers": []
+      },
+      {
+        "question": "Which drug is used primary during CPR(Cardio pulmonary resuscitation)?",
+        "answerList": [
+          {
+            "answerText": "Amoxicillin",
+            "correct": false
+          },
+          {
+            "answerText": "Ephedrine",
+            "correct": false
+          },
+          {
+            "answerText": "Adrenaline",
+            "correct": true
+          }
+        ],
+        "correctAnswers": []
+      },
+      {
+        "question": "What are basic vital signs?",
+        "answerList": [
+          {
+            "answerText": "Body Temperature",
+            "correct": true
+          },
+          {
+            "answerText": "Pulse Rate",
+            "correct": true
+          },
+          {
+            "answerText": "Respiration Rate",
+            "correct": true
+          },
+          {
+            "answerText": "Blood Pressure",
+            "correct": true
+          },
+          {
+            "answerText": "The patient's mood",
+            "correct": false
+          }
+        ],
+        "correctAnswers": []
+      }
+    ]
+  },
+  {
+    "quizName": "Math Quiz",
+    "questionList": [
+      {
+        "question": "What is 5 + 5?",
+        "answerList": [
+          {
+            "answerText": "2 * 5",
+            "correct": true
+          },
+          {
+            "answerText": "25",
+            "correct": false
+          },
+          {
+            "answerText": "13",
+            "correct": false
+          },
+          {
+            "answerText": "10",
+            "correct": true
+          },
+          {
+            "answerText": "18",
+            "correct": false
+          }
+        ],
+        "correctAnswers": []
+      },
+      {
+        "question": "What is 12 * 12?",
+        "answerList": [
+          {
+            "answerText": "45",
+            "correct": false
+          },
+          {
+            "answerText": "148",
+            "correct": false
+          },
+          {
+            "answerText": "144",
+            "correct": true
+          },
+          {
+            "answerText": "124",
+            "correct": false
+          }
+        ],
+        "correctAnswers": []
+      },
+      {
+        "question": "What is 5^2?",
+        "answerList": [
+          {
+            "answerText": "25",
+            "correct": true
+          },
+          {
+            "answerText": "10",
+            "correct": false
+          }
+        ],
+        "correctAnswers": []
+      }
+    ]
+  },
+  {
+    "quizName": "Capital cities Quiz",
+    "questionList": [
+      {
+        "question": "Capital city of Slovakia?",
+        "answerList": [
+          {
+            "answerText": "Bratislava",
+            "correct": true
+          },
+          {
+            "answerText": "Prague",
+            "correct": false
+          },
+          {
+            "answerText": "Sofia",
+            "correct": false
+          },
+          {
+            "answerText": "Vienna",
+            "correct": false
+          }
+        ],
+        "correctAnswers": []
+      },
+      {
+        "question": "Capital city of Norway?",
+        "answerList": [
+          {
+            "answerText": "Stockholm",
+            "correct": false
+          },
+          {
+            "answerText": "London",
+            "correct": false
+          },
+          {
+            "answerText": "Oslo",
+            "correct": true
+          },
+          {
+            "answerText": "Helsinki",
+            "correct": false
+          }
+        ],
+        "correctAnswers": []
+      },
+      {
+        "question": "Capital city of Montenegro?",
+        "answerList": [
+          {
+            "answerText": "Podgorica",
+            "correct": true
+          },
+          {
+            "answerText": "Belgrade",
+            "correct": false
+          },
+          {
+            "answerText": "Skopje",
+            "correct": false
+          }
+        ],
+        "correctAnswers": []
+      }
+    ]
+  }
+]
+
+
+

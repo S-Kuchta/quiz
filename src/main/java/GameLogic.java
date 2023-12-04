@@ -1,9 +1,7 @@
 import answer.Answer;
 import question.Question;
-import quiz.Quiz;
 import quiz.QuizList;
 
-import java.util.List;
 import java.util.Scanner;
 
 public class GameLogic {

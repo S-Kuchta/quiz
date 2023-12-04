@@ -13,11 +13,6 @@ public class Answer {
         this.correct = correct;
     }
 
-    public Answer(String answerText, boolean correct) {
-        this.answerText = answerText;
-        this.correct = correct;
-    }
-
     public String getAnswerText() {
         return answerText;
     }
@@ -34,7 +29,4 @@ public class Answer {
         this.answerOrder = NumberToLetter.getStringFromValue(number);
     }
 
-    public void setAnswerOrder(String answerOrder) {
-        this.answerOrder = answerOrder;
-    }
 }
