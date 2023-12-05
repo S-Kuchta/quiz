@@ -2,7 +2,7 @@
 An assignment for street of code java tutorial
 
 
-### How to get project?
+### How to run project?
 
   - Clone git repository with your IDE - https://github.com/S-Kuchta/quiz.git
   - or
