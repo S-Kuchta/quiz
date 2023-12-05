@@ -1,6 +1,6 @@
 package answer;
 
-import Enums.NumberToLetter;
+import enums.NumberToLetter;
 
 public class Answer {
     private final String answerText;
