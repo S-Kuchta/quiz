@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.util.List;
 
 public class QuestionAndAnswersDatabase {
-    public void questionsAndAnswersInitialize() {
+    public static void questionsAndAnswersInitialize() {
         try {
             BufferedReader reader = new BufferedReader(new FileReader("quizDatabase/quizDb.json"));
             List<Quiz> questionList = new Gson().fromJson(reader, new TypeToken<List<Quiz>>() {
