@@ -6,7 +6,7 @@ An assignment for street of code java tutorial
 
   - Clone git repository with your IDE - https://github.com/S-Kuchta/quiz.git
   - Download zip and open it in your IDE
-  - Run Main class in src/main/java/Main.class
+  - Run Main.class in src/main/java/
 
 
 ### How to play?
