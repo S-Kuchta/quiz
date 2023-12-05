@@ -27,4 +27,4 @@ An assignment for street of code java tutorial
 
 ### Constraints
 
-  - Question can have max 5 answers
+  - A question can have a maximum of 5 answers; otherwise, any additional answers will not be shown.
