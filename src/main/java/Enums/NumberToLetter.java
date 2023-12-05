@@ -1,4 +1,4 @@
-package helpMethod;
+package Enums;
 
 public enum NumberToLetter {
     A(1),
@@ -6,7 +6,6 @@ public enum NumberToLetter {
     C(3),
     D(4),
     E(5);
-
 
     private final int value;
 

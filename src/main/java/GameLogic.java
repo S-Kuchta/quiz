@@ -57,6 +57,11 @@ public class GameLogic {
 
     private boolean checkTheCorrectnessOfPlayerInput(Question possibleAnswers, String playerAnswer) {
         int checkLetters = 0;
+        if(playerAnswer.isEmpty()) {
+            System.out.print("Input can't be empty! ");
+            return false;
+        }
+
         for (Answer possibleAnswer : possibleAnswers.getAnswerList()) {
             if (playerAnswer.contains(possibleAnswer.getAnswerOrder())) {
                 checkLetters++;

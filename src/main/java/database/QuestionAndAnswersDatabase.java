@@ -13,7 +13,7 @@ import java.util.List;
 public class QuestionAndAnswersDatabase {
     public void questionsAndAnswersInitialize() {
         try {
-            BufferedReader reader = new BufferedReader(new FileReader("quizDatabase/db.json"));
+            BufferedReader reader = new BufferedReader(new FileReader("quizDatabase/quizDb.json"));
             List<Quiz> questionList = new Gson().fromJson(reader, new TypeToken<List<Quiz>>() {
             }.getType());
 

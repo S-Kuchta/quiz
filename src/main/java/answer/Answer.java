@@ -1,15 +1,14 @@
 package answer;
 
-import helpMethod.NumberToLetter;
+import Enums.NumberToLetter;
 
 public class Answer {
     private final String answerText;
     private String answerOrder;
     private final boolean correct;
 
-    public Answer(String answerOrder, String answerText, boolean correct) {
+    public Answer(String answerText, boolean correct) {
         this.answerText = answerText;
-        this.answerOrder = answerOrder;
         this.correct = correct;
     }
 

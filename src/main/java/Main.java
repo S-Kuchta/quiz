@@ -6,10 +6,10 @@ import java.util.Scanner;
 public class Main {
 
     private final static Scanner SCANNER = new Scanner(System.in);
-    private static final QuestionAndAnswersDatabase QUESTION_DATABASE_AND_ANSWERS_DATABAZE = new QuestionAndAnswersDatabase();
+    private static final QuestionAndAnswersDatabase QUESTION_DATABASE_AND_ANSWERS_DATABASE = new QuestionAndAnswersDatabase();
 
     public static void main(String[] args) {
-        QUESTION_DATABASE_AND_ANSWERS_DATABAZE.questionsAndAnswersInitialize();
+        QUESTION_DATABASE_AND_ANSWERS_DATABASE.questionsAndAnswersInitialize();
 
         System.out.println("\n-> Welcome to my Quiz challenge! You have the option to choose from " + QuizList.QUIZ_LIST.size() + " quizzes or leave it to chance and get random one");
         System.out.println("""
