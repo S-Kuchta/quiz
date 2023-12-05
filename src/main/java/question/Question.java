@@ -16,7 +16,7 @@ public class Question {
         this.question = question;
     }
 
-    public void addCorrectAnswerToCorrectAnswerList() {
+    public void addCorrectAnswers() {
         this.correctAnswers.clear();
         for (Answer answer : this.getAnswerList()) {
             if (answer.isCorrect()) {
@@ -35,10 +35,10 @@ public class Question {
     }
 
     public void printQuestionWithAnswers(int index) {
-        String singleOrMultiAnswer = this.correctAnswers.size() > 1 ? "(Question with Multiple Answer)" : "(Question with Single Answer)";
+        String singleOrMultipleAnswer = this.correctAnswers.size() > 1 ? "(Question with Multiple Answer)" : "(Question with Single Answer)";
 
         System.out.println("\n|------------------------------------------------------------------------|");
-        System.out.println("\t" + index + ". " + this.question + " -> " + singleOrMultiAnswer);
+        System.out.println("\t" + index + ". " + this.question + " " + singleOrMultipleAnswer);
         System.out.println("|------------------------------------------------------------------------|");
         for (Answer answer : this.answerList) {
             System.out.println("\t" + answer.getAnswerOrder() + ". " + answer.getAnswerText());

@@ -19,7 +19,7 @@ public class QuizList {
         for (int i = 0; i < QUIZ_LIST.size(); i++) {
             System.out.println((i + 1) + ". " + QUIZ_LIST.get(i).getQuizName());
             if (i == QUIZ_LIST.size() - 1) {
-                System.out.println(i + 2 + ". Random Quiz");
+                System.out.println((i + 2) + ". Random Quiz");
             }
         }
     }
@@ -27,10 +27,9 @@ public class QuizList {
     public List<Question> quizSelection() {
         printQuizSelectionList();
 
-        int selectQuiz;
         while (true) {
             try {
-                selectQuiz = this.scanner.nextInt();
+                int selectQuiz = this.scanner.nextInt();
                 if (selectQuiz == QUIZ_LIST.size() + 1) {
                     selectQuiz = RandomNumberGenerator.getRandomNumber(1, QUIZ_LIST.size());
                 }

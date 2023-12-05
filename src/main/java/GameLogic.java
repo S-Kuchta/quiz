@@ -17,7 +17,7 @@ public class GameLogic {
 
         for (Question question : quizList.quizSelection()) {
             question.addOrderToAnswerList();
-            question.addCorrectAnswerToCorrectAnswerList();
+            question.addCorrectAnswers();
             question.printQuestionWithAnswers(index);
 
             do {
@@ -25,8 +25,7 @@ public class GameLogic {
                 playerAnswer = scanner.nextLine().replaceAll("\\s+", "").toUpperCase();
             } while (!checkTheCorrectnessOfPlayerInput(question, playerAnswer));
 
-            int questionPoints = calculateQuestionPoints(question, playerAnswer);
-            if (questionPoints == question.getCorrectAnswers().size()) {
+            if(calculateQuestionPoints(question, playerAnswer) == question.getCorrectAnswers().size()) {
                 System.out.println("Correct!");
                 this.correctAnswers++;
             } else {
@@ -71,7 +70,7 @@ public class GameLogic {
         if (checkLetters == playerAnswer.length()) {
             return true;
         } else {
-            System.out.print("Enter valid answer! ");
+            System.out.print("Enter valid input! ");
             return false;
         }
     }

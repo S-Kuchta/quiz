@@ -14,10 +14,10 @@ public class QuestionAndAnswersDatabase {
     public static void questionsAndAnswersInitialize() {
         try {
             BufferedReader reader = new BufferedReader(new FileReader("quizDatabase/quizDb.json"));
-            List<Quiz> questionList = new Gson().fromJson(reader, new TypeToken<List<Quiz>>() {
+            List<Quiz> quiz = new Gson().fromJson(reader, new TypeToken<List<Quiz>>() {
             }.getType());
 
-            QuizList.QUIZ_LIST.addAll(questionList);
+            QuizList.QUIZ_LIST.addAll(quiz);
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
