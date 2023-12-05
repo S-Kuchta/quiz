@@ -2,10 +2,8 @@ package question;
 
 import answer.Answer;
 
-import javax.swing.text.html.HTMLDocument;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Iterator;
 import java.util.List;
 
 public class Question {
@@ -27,10 +25,14 @@ public class Question {
         }
     }
 
-    public void addOrderToAnswerList() {
+    private void checkNumberOfAnswers() {
         if (this.answerList.size() > 5) {
             this.answerList = this.answerList.subList(0, 5);
         }
+    }
+
+    public void addOrderToAnswerList() {
+        checkNumberOfAnswers();
 
         Collections.shuffle(this.answerList);
         int index = 1;
