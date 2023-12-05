@@ -35,8 +35,10 @@ public class Question {
     }
 
     public void printQuestionWithAnswers(int index) {
+        String singleOrMultiAnswer = this.correctAnswers.size() > 1 ? "(Question with Multiple Answer)" : "(Question with Single Answer)";
+
         System.out.println("\n|------------------------------------------------------------------------|");
-        System.out.println("\t" + index + ". " + this.question);
+        System.out.println("\t" + index + ". " + this.question + " -> " + singleOrMultiAnswer);
         System.out.println("|------------------------------------------------------------------------|");
         for (Answer answer : this.answerList) {
             System.out.println("\t" + answer.getAnswerOrder() + ". " + answer.getAnswerText());
