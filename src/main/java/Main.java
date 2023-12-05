@@ -28,7 +28,7 @@ public class Main {
             } else if (continuePlaying.equals("YES")) {
                 gameLogic.quizStart();
             } else {
-                System.out.println("Enter valid answer.");
+                System.out.println("Enter valid Input.");
             }
         }
     }

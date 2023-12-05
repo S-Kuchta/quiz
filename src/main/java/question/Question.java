@@ -2,14 +2,16 @@ package question;
 
 import answer.Answer;
 
+import javax.swing.text.html.HTMLDocument;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 
 public class Question {
 
     private final String question;
-    private final List<Answer> answerList = new ArrayList<>();
+    private List<Answer> answerList = new ArrayList<>();
     private final List<String> correctAnswers = new ArrayList<>();
 
     public Question(String question) {
@@ -26,6 +28,10 @@ public class Question {
     }
 
     public void addOrderToAnswerList() {
+        if (this.answerList.size() > 5) {
+            this.answerList = this.answerList.subList(0, 5);
+        }
+
         Collections.shuffle(this.answerList);
         int index = 1;
         for (Answer answer : answerList) {
