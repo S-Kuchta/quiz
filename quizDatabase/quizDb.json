@@ -1,6 +1,6 @@
 [
   {
-    "quizName": "Medical Quiz",
+    "quizName": "First aid Quiz",
     "questionList": [
       {
         "question": "What is biggest bone in human body?",
@@ -25,18 +25,18 @@
         "correctAnswers": []
       },
       {
-        "question": "Which drug is used primary during CPR(Cardio pulmonary resuscitation)?",
+        "question": "Which bleeding is the most serious?",
         "answerList": [
           {
-            "answerText": "Amoxicillin",
+            "answerText": "Capillaries",
             "correct": false
           },
           {
-            "answerText": "Ephedrine",
+            "answerText": "Veins",
             "correct": false
           },
           {
-            "answerText": "Adrenaline",
+            "answerText": "Arteries",
             "correct": true
           }
         ],
@@ -63,6 +63,42 @@
           },
           {
             "answerText": "The patient's mood",
+            "correct": false
+          }
+        ],
+        "correctAnswers": []
+      },
+      {
+        "question": "Correct rate of chest compression?",
+        "answerList": [
+          {
+            "answerText": "180-200 compressions a minute",
+            "correct": false
+          },
+          {
+            "answerText": "50-70 compressions a minute",
+            "correct": false
+          },
+          {
+            "answerText": "100-120 compressions a minute",
+            "correct": true
+          }
+        ],
+        "correctAnswers": []
+      },
+      {
+        "question": "What you will do first?",
+        "answerList": [
+          {
+            "answerText": "Stop bleeding",
+            "correct": true
+          },
+          {
+            "answerText": "Flee from patient",
+            "correct": false
+          },
+          {
+            "answerText": "Make panic",
             "correct": false
           }
         ],

@@ -4,13 +4,14 @@ import answer.Answer;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
 
 public class Question {
 
     private final String question;
     private List<Answer> answerList = new ArrayList<>();
-    private final List<String> correctAnswers = new ArrayList<>();
+    private final HashSet<String> correctAnswers = new HashSet<>();
 
     public Question(String question) {
         this.question = question;
@@ -36,7 +37,7 @@ public class Question {
 
         Collections.shuffle(this.answerList);
         int index = 1;
-        for (Answer answer : answerList) {
+        for (Answer answer : this.answerList) {
             answer.setAnswerOrder(index);
             index++;
         }
@@ -57,7 +58,7 @@ public class Question {
         return this.answerList;
     }
 
-    public List<String> getCorrectAnswers() {
+    public HashSet<String> getCorrectAnswers() {
         return this.correctAnswers;
     }
 }

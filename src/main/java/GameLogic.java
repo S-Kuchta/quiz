@@ -2,6 +2,7 @@ import answer.Answer;
 import question.Question;
 import quiz.QuizList;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class GameLogic {
@@ -23,7 +24,7 @@ public class GameLogic {
             do {
                 System.out.println("Enter your answer: ");
                 playerAnswer = scanner.nextLine().replaceAll("\\s+", "").toUpperCase();
-            } while (!checkTheCorrectnessOfPlayerInput(question, playerAnswer));
+            } while (!checkTheCorrectnessOfPlayerInput(question.getAnswerList(), playerAnswer));
 
             if(calculateQuestionPoints(question, playerAnswer) == question.getCorrectAnswers().size()) {
                 System.out.println("Correct!");
@@ -54,14 +55,14 @@ public class GameLogic {
         return questionPoints;
     }
 
-    private boolean checkTheCorrectnessOfPlayerInput(Question possibleAnswers, String playerAnswer) {
+    private boolean checkTheCorrectnessOfPlayerInput(List<Answer> possibleAnswers, String playerAnswer) {
         int checkLetters = 0;
         if(playerAnswer.isEmpty()) {
             System.out.print("Input can't be empty! ");
             return false;
         }
 
-        for (Answer possibleAnswer : possibleAnswers.getAnswerList()) {
+        for (Answer possibleAnswer : possibleAnswers) {
             if (playerAnswer.contains(possibleAnswer.getAnswerOrder())) {
                 checkLetters++;
             }

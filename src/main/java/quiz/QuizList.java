@@ -11,9 +11,6 @@ public class QuizList {
     public static final List<Quiz> QUIZ_LIST = new ArrayList<>();
     private final Scanner scanner = new Scanner(System.in);
 
-    public QuizList() {
-    }
-
     private void printQuizSelectionList() {
         System.out.println("Select QUIZ: ");
         for (int i = 0; i < QUIZ_LIST.size(); i++) {
