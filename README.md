@@ -31,4 +31,4 @@ An assignment for street of code java tutorial
   - A question can have a maximum of 5 answers; otherwise, any additional answers will not be shown.
 
 ### What to improve
-  - Remove an empty correctAnswers array in quizDb.json 
+  - Remove unnecessary empty correctAnswers array in quizDb.json 
