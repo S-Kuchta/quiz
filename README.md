@@ -5,7 +5,7 @@ An assignment for street of code java tutorial
 ### How to run project?
 
   - Clone git repository with your IDE - https://github.com/S-Kuchta/quiz.git
-  - or
+     or
   - Download zip and open it in your IDE
   - Run Main.class in src/main/java/
 
