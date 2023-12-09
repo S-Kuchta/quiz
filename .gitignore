@@ -2,6 +2,7 @@
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
+!**/src/main/**/target/
 !**/target/**
 
 ### Eclipse ###
