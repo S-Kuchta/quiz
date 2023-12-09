@@ -26,7 +26,7 @@ public class GameLogic {
                 playerAnswer = scanner.nextLine().replaceAll("\\s+", "").toUpperCase();
             } while (!checkTheCorrectnessOfPlayerInput(question.getAnswerList(), playerAnswer));
 
-            if(calculateQuestionPoints(question, playerAnswer) == question.getCorrectAnswers().size()) {
+            if (calculateQuestionPoints(question, playerAnswer) == question.getCorrectAnswers().size()) {
                 System.out.println("Correct!");
                 this.correctAnswers++;
             } else {
@@ -57,7 +57,7 @@ public class GameLogic {
 
     private boolean checkTheCorrectnessOfPlayerInput(List<Answer> possibleAnswers, String playerAnswer) {
         int checkLetters = 0;
-        if(playerAnswer.isEmpty()) {
+        if (playerAnswer.isEmpty()) {
             System.out.print("Input can't be empty! ");
             return false;
         }
